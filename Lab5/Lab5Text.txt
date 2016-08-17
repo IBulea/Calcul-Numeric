@@ -1,0 +1,97 @@
+TEMA!!!
+(Lmf)(t)     x0,x1,x2...,xm -> nodes given
+	     t0,t1,t2,....tn ->multiplicity given
+
+Evaluate the complexity of each method:
+
+Metode
+1)Aplicarea formulei (Lmf)(t) = Sum(k=0;m) Product(j=0,j!=k;m) (t -xj)/(xk-xj) * f(xk)
+2) Newton formula
+	(Nmf)(t) = Sum(k=0;m) (Product(j=0;k-1)(t-xk)) [x0,...xn;f]
+3)Baricentrinc formula  #flops
+
+END CERINTA TEMA!!!!
+
+				HERMITE INTERPOLATION
+x0,x1,x2,...,xm        xi!=xj (i!=j)
+r0,r1,r2,...,rm       ri=0 for simple nodes
+f:[a,b] -> R s.t. there exists the j order derivated of f in xk -> f^(j) (xk) , k=0..n   j=0..rk
+	P=?
+	P^(j)(xm)=f^(j)(xk) k=0..n   j=0..rk
+	  ->the j order derivated of P in xk
+		   ->the j order derivated of f in xk
+    	
+	n- degree(P)
+	n=?
+	n=r0+r1+r2+...+rm+m
+	n=(r0+1)+(r1+1)+...+(rm+1)-1
+	
+	(Hmf)(x)=SUM(k=0;m)SUM(j=0;k) hkj(X) * f(xk)
+
+	(Rmf)(x) = u(x)/(n+1)! f^(n+1)(csi) ->the n+1 order derivated of f in csi
+	
+	u(x) = (x-x0)^(r0+1) (x-x1)^(r1+1)...(x-xm)^(rm+1)
+
+	uk(x) = u(x)/(x-xn)^(rn+1)
+
+	hkj(x) = (x-xj)!/j! * SUM(miu=0;rk-1) (x-xk)^miu/(miu)! * [1/miuk^(x)]^miu  x=xk  //miuk^(x) >the 0 order derivated of miu in x
+
+	[x0,x1,...,xk;f] = f^(k)(csi)/k! //f(z0)=[z0;f]	
+	f belongs to C^k[a,b]
+
+	x0,x1,x2...xk -> Alpha
+	lim[x0,x1,x2...xk;f] = f^(k)(Alpha)/k!
+
+
+
+  r0+1 {x0	z0	f(z0)=[z0;f]
+	x0	z1	f(z1)=[z1;f]	
+	.
+	.
+	.x0
+  r1+1 {x1
+	x1
+	.
+	.
+	.
+	x1
+  rm+1 {xm
+	.
+	.
+	.
+	xm	zn+1  f(zn+1) = [zn+1;f]
+
+Compute the Hermite Polynomial for:
+	f belonging to C^k[a,b]
+	x0=a,x1=b
+	r0=1,r1=1
+	Remark: for m=0,r0=n
+		(Hnf)(x) = (Tnf)(x;x0)
+		for rk=0   (Hnf)(x)=(Lmf)(x)
+
+
+n=(r0+1)+(r1+1) -1 = 3
+
+(Hnf)(a) = f(a) -> (Hnf)^(1)(a) = f^(1)(a) //-> Hnf,f derived
+(Hnf)(b) = f(b) -> (Hnf)^(1)(b) = f^(1)(b)
+Divided differences table:
+
+z0	a	f(a)	f^(1)(a)		(f(b)-f(a) - (b-a)*f^(1)(a)) / (b-a)^2		((b-a)[f^(1)(b)+f^(1)(a)] - [f(b)-f(a)]) / (b-a)^3
+z1	a	f(a)	(f(b)-f(a))/(b-a)	((b-a)f^(1)(b)-f(b)+f(a)) /(b-a)^2
+z2	b	f(b)	f^(1)(b)
+z3	b	f(b)	
+
+(H3f)(x) =f(a)+(x-a)*f^(1)(a)+(x-a)^2 * (f(b)-f(a) - (b-a)*f^(1)(a)) / (b-a)^2 + (x-a)^2*(x-b)*((b-a)[f^(1)(b)+f^(1)(a)] - [f(b)-f(a)]) / (b-a)^3
+
+Compute (Hnf)(t) when x0,x1,x2...xm given rk=1,k=0...m; and f(xk), f^(1)(xk) given
+	-> MatLabs
+	1)Compute dd table
+	2)Compute Newton polynomial t,z,dd table
+
+Saptamana viitoare: Test din Lagrange + metoda baricentrica, care o avem ca tema pe atunci;
+
+
+
+
+
+			

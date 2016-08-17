@@ -1,0 +1,42 @@
+
+Lab2:
+Orthogonal and Taylor Polynomials.Differences
+[a,b] = [-1,1]
+w(t)=1
+
+Legrenge polynomials:
+dominant coefficient of PIn= 1
+PIn(t) = n!/(2n)! (t^2-1)
+
+In maple:
+with(orthopoly):
+[G, H, L, P, T, U]
+P - Jacobi polynomial
+
+For Legendre polyns...
+P(n, x...)
+n-degree
+x-variable
+
+
+Chebyshev #1 plunomials
+[a,b] = [-1,1]
+w(t) = 1/rad(1-t^2)
+Tn(t)=cos(n arcos t);
+	--cos 2a = 2 cos^2 a - 1--
+T0(t) = 1
+T1(t) = t
+T2(t) = 2t^2 - 1
+
+Tn+1(t) = 2t*Tn(t) - Tn-1(t)
+
+
+
+[a,b] ---> [-1,1]
+       c
+(ToC)
+c(t) =alpha*t+tbeta 
+
+
+Chebyshev #1 plunomial in matlab
+

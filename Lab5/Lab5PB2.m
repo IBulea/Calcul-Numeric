@@ -1,0 +1,10 @@
+%Lab5PB2;
+f = @(x) sin(2*x);
+fd =@(x) 2*cos(2*x);
+x=linspace(-5,5,15);
+y=f(x);
+dy=fd(x);
+t=linspace(-5,5,100);
+[z,T]=divdiffdn(x,y,dy);
+v=NewtonPoly(z',T,t);
+plot(x,y,'o',t,v,t,f(t),t,fd(t));

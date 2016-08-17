@@ -1,0 +1,44 @@
+Lagrange Interpolation
+
+f: [a,b]->R
+x0,z1,x2...xn belong to [a,b]
+xi != xj (i!=j), i,j belong to[1,n]
+P(xk) = f(xn), k belongs to [1,m]  (m - degree)
+Lmf - Lagrange interpolation polynomial of f
+
+Lmf(x) = Sum(k=0,m) of lk(x)f(xk)
+lk(x)=Product(j=0,j!=k,m) (x-xj)/(xk-xj)
+
+Example 1:
+m =1;
+x0,x1;
+l0(x) = (x-x1)/(x0-x1)
+l1(x) = (x-x0)/(x1-x0)
+lk(x) = c * (x-x0)(x-x1)...(x-xk-1)(x-xk+1)...(x-xm)
+lk(xj) = 0;
+lk(xk) = 1;
+lk(xk) = c * (xk-x0)(xk-x1)...(xk-xk-1)(xk-xk+1)...(xk-xm) = 1;
+=> c = 1 / (xk-x0)(xk-x1)...(xk-xk-1)(xk-xk+1)...(xk-xm);
+
+Lmf(x) = l0(x)f(x0)+l1(x)f(x1);
+
+
+Example 2:
+m=2
+x0,x1,x2
+l0(x)=(x-x1)(x-x2)/(x0-x1)(x0-x2)
+l1(x)=(x-x0)(x-x2)/(x1-x0)(x1-x2)
+l2(x)=(x-x0)(x-x1)/(x2-x0)(x2-x1)
+
+L2f(x)=(x-x1)(x-x2)/(x0-x1)(x0-x2) * f(x0) + (x-x0)(x-x2)/(x1-x0)(x1-x2) * f(x1) + (x-x0)(x-x1)/(x2-x0)(x2-x1) * f(x2)
+L2f - Second degree Lagrange polynomial
+
+
+Error is denoted by Rmf
+Rmf(x) = f(x) - Lmf(x)
+Rmf(x) = U(x)/(m+1)! * f derivated(m+1) (psi)
+psi belongs to [alpha,beta]
+alpha = min(x0,x1,x2....xm)
+beta =  max(x0,x1,x2....xm)
+
+HM - problema facultativa cu noduri chebyshev si echidistante
